@@ -94,20 +94,25 @@ body {
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">
 			<h6 class="m-0 font-weight-bold text-primary">
-				
+				<a href="MessageWrite.jsp">
+					<i class="fas fa-envelope fa-fw float-right" style="color: #62ac2e"></i>
+				</a>
+				<a href="FriendService?id=">
+					<i class="fas fa-user fa-fw float-right" style="color: #62ac2e"></i>
+				</a>
 			</h6>
 		</div>
 		<div class="card-body">
-			<div class="feed">
-				<div>
+			<div class="feed" style="width:700px; height:500px;">
+				<div  style="width:300px; height:400px;">
 					<img src="img/your_feed_image.jpg" alt="Feed Image" class="feed-image">
 				</div>
-				<div class="comment-section">
+				
+					<div class="comment-form">
 					<ul class="comment-list">
 						<!-- Add dynamic comments here -->
 						<li><strong>Your Commenter:</strong> Comment 1</li>
 					</ul>
-					<div class="comment-form">
 						<form id="commentForm" action="CommentService">
 							<input type="hidden" name="F_INDEX" value="">
 							<input type="hidden" name="C_NAME" value="">
@@ -115,7 +120,7 @@ body {
 							<input type="submit" value="전송" class="send">
 						</form>
 					</div>
-				</div>
+				
 			</div>
 		</div>
 	</div>
