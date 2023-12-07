@@ -85,42 +85,63 @@ body {
 	cursor: pointer;
 }
 
+.feed {
+	display: flex;
+	justify-content: space-between;
+	width: 500px; /* Adjust the width as needed */
+	margin: 0 auto; /* Center the feed */
+}
+
+.comment-form {
+	margin-top: 20px;
+	width: 48%; /* Adjust the width as needed */
+}
+
+.feed {
+	display: flex;
+	justify-content: space-between;
+}
+
 .send:hover {
 	background-color: #375abb;
 }
+.card-body {
+    padding: 10px; /* Adjust the padding as needed */
+}
+
 </style>
 </head>
 <body>
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">
 			<h6 class="m-0 font-weight-bold text-primary">
-				<a href="MessageWrite.jsp">
-					<i class="fas fa-envelope fa-fw float-right" style="color: #62ac2e"></i>
-				</a>
-				<a href="FriendService?id=">
-					<i class="fas fa-user fa-fw float-right" style="color: #62ac2e"></i>
+				<a href="MessageWrite.jsp"> <i
+					class="fas fa-envelope fa-fw float-right" style="color: #62ac2e"></i>
+				</a> <a href="FriendService?id="> <i
+					class="fas fa-user fa-fw float-right" style="color: #62ac2e"></i>
 				</a>
 			</h6>
 		</div>
 		<div class="card-body">
-			<div class="feed" style="width:700px; height:500px;">
-				<div  style="width:300px; height:400px;">
-					<img src="img/your_feed_image.jpg" alt="Feed Image" class="feed-image">
+			<div class="feed" style="width: 700px; height: 500px;">
+				<div style="width: 300px; height: 400px;">
+					<img src="img/your_feed_image.jpg" alt="Feed Image"
+						class="feed-image">
 				</div>
-				
-					<div class="comment-form">
+
+				<div class="comment-form">
 					<ul class="comment-list">
 						<!-- Add dynamic comments here -->
 						<li><strong>Your Commenter:</strong> Comment 1</li>
 					</ul>
-						<form id="commentForm" action="CommentService">
-							<input type="hidden" name="F_INDEX" value="">
-							<input type="hidden" name="C_NAME" value="">
-							<input type="text" name="C_COMMENT" placeholder="댓글을 입력하세요">
-							<input type="submit" value="전송" class="send">
-						</form>
-					</div>
-				
+					<form id="commentForm" action="CommentService">
+						<input type="hidden" name="F_INDEX" value=""> <input
+							type="hidden" name="C_NAME" value=""> <input type="text"
+							name="C_COMMENT" placeholder="댓글을 입력하세요"> <input
+							type="submit" value="전송" class="send">
+					</form>
+				</div>
+
 			</div>
 		</div>
 	</div>
