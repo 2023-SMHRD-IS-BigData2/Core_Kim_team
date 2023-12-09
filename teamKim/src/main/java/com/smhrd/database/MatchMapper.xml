@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!--  config에 Alias추가해야됨 -->
+<mapper namespace="com.smhrd.database.MatchMapper">
+   
+   <!--  id랑 table명 수정 -->
+   <insert id="makeMatch" parameterType="Mercenary_Match">
+      INSERT INTO MATCH VALUES(MATCH_INDEX.nextval,#{mm}, #{m_date},#{user_index},#{start_hour},#{last_hour},
+      #{people_num},#{f_level},#{writing}, #{place})
+   </insert>
+   <!-- 용병(yb) 만들기 -->
+   <insert id="makeYb" parameterType="Mercenary_Match">
+      INSERT INTO MATCH VALUES(MATCH_INDEX.nextval,#{mm}, #{m_date},#{user_index},#{start_hour},#{last_hour},
+      #{people_num},#{f_level},#{writing}, null)
+   </insert>
+   
+   <select id="allMatchDate" resultType="Mercenary_Match">
+      SELECT * FROM MATCH WHERE m_date in #{date}
+   </select>
+   
+   <update id="updateMatch" parameterType="Mercenary_Match">
+      UPDATE MATCH set MM = #{mm} where F_INDEX = #{f_index}
+   </update>
+   
+   <insert id="sendMatching" parameterType="Matching">
+   INSERT INTO MATCHING VALUES (M_INDEX.NEXTVAL, 
+   #{writer},#{challenger},#{f_index},'X')
+   </insert>   
+
+   <select id="allMatching" resultType="Matching">
+   SELECT * FROM MATCHING
+   </select>
+   
+   <select id="receiveMatching" resultType="Matching" parameterType="String">
+   SELECT * FROM MATCHING WHERE WRITER = #{id} AND MATCHING = 'X'
+   </select>
+   <!-- 매치 성사여부  -->
+   <update id="succeedMatching" parameterType="Matching">
+   UPDATE MATCHING set MATCHING = 'O' WHERE f_INDEX = #{f_index}  AND CHALLENGER =#{challenger} AND WRITER=#{writer} 
+   </update>
+   
+   <delete id="delAllMatching">
+   DELETE from MATCHING WHERE F_INDEX = #{f_index} AND MATCHING = 'X'
+   </delete>
+   
+   <delete id="delMatch">
+   DELETE from MATCHING WHERE F_INDEX = #{f_index}
+   </delete>
+   
+   <delete id="delMatching" parameterType="Matching">
+   DELETE from MATCHING WHERE f_INDEX = #{f_index}  AND CHALLENGER =#{challenger} AND WRITER=#{writer}
+   </delete>
+   
+   <select id="feedback_w" resultType="Matching" parameterType="String">
+   SELECT * FROM MATCHING WHERE WRITER = #{id} AND MATCHING = 'O'
+   </select>
+   
+   <select id="feedback_c" resultType="Matching" parameterType="String">
+   SELECT * FROM MATCHING WHERE CHALLENGER = #{id} AND MATCHING = 'O'
+   </select>
+</mapper>
