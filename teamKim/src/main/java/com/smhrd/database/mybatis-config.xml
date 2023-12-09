@@ -23,7 +23,8 @@
       </dataSource>
     </environment>
   </environments>
-  <mappers>
+  <mappers>  		
+    <mapper resource="com/smhrd/database/MatchMapper.xml"/>
     <mapper resource="com/smhrd/database/MemberMapper.xml"/>
   </mappers>
 </configuration>
