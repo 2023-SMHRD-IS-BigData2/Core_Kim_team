@@ -17,13 +17,13 @@ public class LoginService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		request.setCharacterEncoding("utf-8");
 
 		String id = request.getParameter("id");
 		String pic = request.getParameter("pic");
 		String nick = request.getParameter("nick");
 
-		System.out.println(id + pic + nick);
 
 		Member vo = new Member(id, nick, pic);
 
@@ -31,21 +31,17 @@ public class LoginService extends HttpServlet {
 
 		if (cnt == 1) {
 
-			System.out.println("기존회원");
-
-			vo = new MemberDAO().login(vo.getU_id());
-			HttpSession session = request.getSession();
-			session.setAttribute("vo", vo);
-			response.sendRedirect("./RealMain.jsp");
+			vo = new MemberDAO().login(vo.getId());
 			
 		} else {
 
 			cnt = new MemberDAO().join(vo);
-			HttpSession session = request.getSession();
-			session.setAttribute("vo", vo);
-			response.sendRedirect("./feed.jsp");
 
 		}
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("vo", vo);
+		response.sendRedirect("./feed.jsp");
 
 
 	}
