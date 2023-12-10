@@ -1,6 +1,7 @@
+<%@page import="com.smhrd.model.FeedDAO"%>
 <%@page import="com.smhrd.model.Feed"%>
 <%@page import="java.util.List"%>
-<%@page import="com.smhrd.model.FeedDAO"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -171,14 +172,14 @@ body {
 			<!-- Left Column -->
 			<div class="flex-1 pr-4">
 				<h1 class="h3 mb-4 text-gray-800">Main page</h1>
-
-				<!-- Illustrations -->
 				<%
 				List<Feed> feeds = new FeedDAO().totalFeed();
 				%>
-				<%
-				for (Feed i : feeds) {
-				%>
+
+				<!-- Illustrations -->
+				<%-- <%
+				for (int i =0; i<feeds.size();i++) {
+				%> --%>
 				<!-- 피드 카드 -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
@@ -294,9 +295,9 @@ body {
 						</div>
 					</div>
 				</div>
-				<%
+				<%-- <%
 				}
-				%>
+				%> --%>
 				<!-- Q&A Section -->
 
 			</div>
