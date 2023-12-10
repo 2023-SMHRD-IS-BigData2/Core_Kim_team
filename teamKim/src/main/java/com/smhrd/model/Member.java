@@ -16,10 +16,10 @@ import lombok.ToString;
 @RequiredArgsConstructor
 public class Member {
 	
-	@NonNull private String u_id;
+	@NonNull private String id;
 	@NonNull private String nick;
-	private int team_index;
-	private String intro;
 	@NonNull private String pic;
+	private int t_index;
+	private String intro;
 	
 }
