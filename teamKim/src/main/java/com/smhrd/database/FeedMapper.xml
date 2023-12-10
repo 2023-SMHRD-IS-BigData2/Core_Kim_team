@@ -17,7 +17,7 @@
 		select * from TB_FEED where FEED_INDEX=#{feed_index}
 	</select>
 	
-	<insert id="sendFeedlike" parameterType="FeedLike">
+	<!-- <insert id="sendFeedlike" parameterType="FeedLike">
 		insert into TB_FEED_LIKE values (#{feed_index}, #{user_index})
 	</insert>
 	
@@ -35,5 +35,5 @@
 	
 	<delete id="delFeedlike" parameterType="FeedLike">
 		DELETE FROM TB_FEED_LIKE WHERE FEED_INDEX=#{feed_index} and USER_INDEX = #{user_index}
-	</delete>
+	</delete> -->
 </mapper>
