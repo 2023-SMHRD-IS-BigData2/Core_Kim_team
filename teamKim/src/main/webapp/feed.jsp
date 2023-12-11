@@ -173,12 +173,12 @@ body {
 				<h1 class="h3 mb-4 text-gray-800">Main page</h1>
 
 				<!-- Illustrations -->
-				<%
+				<%-- <%
 				List<Feed> feeds = new FeedDAO().totalFeed();
 				%>
 				<%
 				for (Feed i : feeds) {
-				%>
+				%> --%>
 				<!-- 피드 카드 -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
@@ -294,9 +294,9 @@ body {
 						</div>
 					</div>
 				</div>
-				<%
+				<%-- <%
 				}
-				%>
+				%> --%>
 				<!-- Q&A Section -->
 
 			</div>
