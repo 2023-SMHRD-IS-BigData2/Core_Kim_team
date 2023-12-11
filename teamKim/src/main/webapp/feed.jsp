@@ -172,10 +172,7 @@ body {
 			<!-- Left Column -->
 			<div class="flex-1 pr-4">
 				<h1 class="h3 mb-4 text-gray-800">Main page</h1>
-				<%
-				List<Feed> feeds = new FeedDAO().totalFeed();
-				%>
-
+				
 				<!-- Illustrations -->
 				<%-- <%
 				for (int i =0; i<feeds.size();i++) {
