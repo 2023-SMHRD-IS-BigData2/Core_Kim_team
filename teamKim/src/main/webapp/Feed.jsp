@@ -23,15 +23,15 @@
             <a href="./feed.html"><img src="img\futsal062.png" alt="Logo" class="h-15 w-40"></a>
 
             <div class="flex-space-x-4">
-                <a href="./feed.html"><button class="rounded-button login-button p-4 text-lg" style="color: black;">FEED</button></a>
-                <a href="./MyPage.html"><button class="rounded-button login-button p-4 text-lg" style="color: black;">MY PAGE</button></a>
-                <a href="./FeedWrite.html"><button class="rounded-button login-button p-4 text-lg" style="color: black;">피드작성</button></a>
-                <a href="./enroll.html"><button class="rounded-button login-button p-4 text-lg" style="color: black;">매치용병 등록</button></a>
-                <a href="./ViewMatch.html"><button class="rounded-button login-button p-4 text-lg" style="color: black;">매치용병 보기</button></a>
+                <a href="./Feed.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">FEED</button></a>
+                <a href="./MyPage.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">MY PAGE</button></a>
+                <a href="./FeedWrite.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">피드작성</button></a>
+                <a href="./MatchCalander.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">매치용병 등록</button></a>
+                <a href="./ViewCalander.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">매치용병 보기</button></a>
 
             </div>
             <div class="flex space-x-2">
-                <button class="rounded-button login-button p-4 text-lg" style="color: black;">로그인</button>
+                <a href="./Login.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">로그인</button></a>
                 <button class="rounded-button login-button p-4 text-lg" style="color: black;">회원가입</button>
             </div>
         </div>

@@ -27,7 +27,7 @@
             <h2 class="text-2xl font-semibold text-center mb-8">로그인</h2>
             <div class="space-y-4">
                 <div class="flex flex-col space-y-4">
-                    <button class="bg-yellow-400 text-gray-800 rounded-md py-2" onclick="loginWithKakao()">카카오로 계속하기</button>
+                    <button class="bg-yellow-400 text-gray-800 rounded-md py-2" onclick="loginWithKakao()">카카오로 로그인하기</button>
                 </div>
             </div>
         </div>
