@@ -21,6 +21,12 @@
 </head>
 
 <body class="bg-gray-100">
+<script type="text/javascript">
+      function MessageWrite() {
+         window.open("MessageWrite.jsp", "MessageWrite",
+               "width=400, height=500, top=10, left=10")
+      }
+   </script>
     <div class="container mx-auto p-4">
         <!-- Header -->
         <div class="header mb-6">
@@ -36,7 +42,7 @@
 
             </div>
             <div class="flex space-x-2">
-                <button class="rounded-button login-button p-4 text-lg" style="color: black;">쪽지</button>
+                <a href="javascript:MessageWrite()" ><button class="rounded-button login-button p-4 text-lg" style="color: black;">쪽지</button></a>
                 <a href="./login.html"><button class="rounded-button login-button p-4 text-lg" style="color: black;">로그인</button></a>
             </div>
         </div>
