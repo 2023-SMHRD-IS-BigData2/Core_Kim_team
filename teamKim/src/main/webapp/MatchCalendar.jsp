@@ -28,7 +28,6 @@
                 <a href="./FeedWrite.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">피드작성</button></a>
                 <a href="./enroll.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">매치용병 등록</button></a>
                 <a href="./ViewMatch.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">매치용병 보기</button></a>
-
             </div>
             <div class="flex space-x-2">
                 <button class="rounded-button login-button p-4 text-lg" style="color: black;">쪽지</button>
