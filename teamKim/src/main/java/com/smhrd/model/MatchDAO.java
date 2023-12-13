@@ -62,10 +62,10 @@ public class MatchDAO {
 		}
 		return cnt;
 	}
-
+ 
 	public Team userTeam(String user_index) {
 		Member member = new MemberDAO().login(user_index);
-		return new TeamDAO().selTeam(member.getTeam_index());
+		return new TeamDAO().selTeam(member.getT_index());
 	}
 
 	public float starNum(String user_index) {
