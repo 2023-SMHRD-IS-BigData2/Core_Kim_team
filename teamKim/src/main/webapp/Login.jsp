@@ -22,7 +22,7 @@
     <div class="min-h-screen flex flex-col items-center justify-center">
         <div class="w-full max-w-md p-8 space-y-6 bg-white shadow-lg rounded-lg">
             <div class="flex justify-center mb-2">
-                <a href="./feed.jsp"><img src="img\futsal062.png" alt="Logo" class="h-15 w-40"></a>
+                <a href="./Feed.jsp"><img src="img\futsal062.png" alt="Logo" class="h-15 w-40"></a>
             </div>
             <h2 class="text-2xl font-semibold text-center mb-8">로그인</h2>
             <div class="space-y-4">
