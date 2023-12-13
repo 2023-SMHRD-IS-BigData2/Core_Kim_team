@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 @NonNull
 @Getter
-public class MatchEnroll {
+public class Match {
 	 // 매칭, 용병 피드 추가시 모든 정보 입력!
 	   private int f_index;
 	   @NonNull private int mm; // 1 = 매칭 / 2 = 용병 / 3 = 매칭 성사 / 4 = 용병 성사

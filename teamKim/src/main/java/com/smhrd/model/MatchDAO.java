@@ -8,10 +8,10 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.smhrd.database.SqlSessionManager;
 
 // team 생성해야됨
-public class MatchEnrollDAO {
+public class MatchDAO {
 	SqlSessionFactory sqlsessionFactory = SqlSessionManager.getSqlSession();
 
-	public int makeMEMA(MatchEnroll vo) {
+	public int makeMEMA(Match vo) {
 		int cnt = 0;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);
 		try {
@@ -24,7 +24,7 @@ public class MatchEnrollDAO {
 		return cnt;
 	}
 
-	public int makeME(MatchEnroll vo) {
+	public int makeME(Match vo) {
 		int cnt = 0;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);
 		try {
@@ -37,8 +37,8 @@ public class MatchEnrollDAO {
 		return cnt;
 	}
 
-	public List<MatchEnroll> allMEMAdate(String date) {
-		List<MatchEnroll> memas = null;
+	public List<Match> allMEMAdate(String date) {
+		List<Match> memas = null;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);
 		try {
 			memas = sqlSession.selectList("com.smhrd.database.MatchMapper.allMEMAdate", date);
@@ -50,7 +50,7 @@ public class MatchEnrollDAO {
 		return memas;
 	}
 
-	public int updateMEMA(MatchEnroll vo) {
+	public int updateMEMA(Match vo) {
 		int cnt = 0;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);
 		try {
