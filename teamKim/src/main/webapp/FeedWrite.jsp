@@ -21,7 +21,7 @@
     <div class="container mx-auto p-4">
         <!-- Header -->
         <div class="header mb-6">
-            <a href="./feed.html"><img src="img\futsal062.png" alt="Logo" class="h-15 w-40"></a>
+            <a href="./Feed.jsp"><img src="img\futsal062.png" alt="Logo" class="h-15 w-40"></a>
 
             <div class="flex-space-x-4">
             <a href="./Feed.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">FEED</button></a>
