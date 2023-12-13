@@ -3,10 +3,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매치, 용병등록</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/enroll.css" rel="stylesheet" />
 </head>
-<body>
+
+    <style>
+       
+    
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <!-- Header -->
+        <div class="header mb-6 flex justify-between items-center">
+            <div>
+                <a href="./feed.jsp"><img src="img\futsal062.png" alt="Logo" class="h-15 w-40"></a>
+            </div>
+            <div class="flex-space-x-4">
+              <a href="./Feed.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">FEED</button></a>
+                <a href="./MyPage.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">MY PAGE</button></a>
+                <a href="./FeedWrite.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">피드작성</button></a>
+                <a href="./MatchCalendar.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">매치용병 등록</button></a>
+                <a href="./ViewCalendar.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">매치용병 보기</button></a>
+
+            </div>
+            <div class="flex space-x-2">
+                <button class="rounded-button login-button p-4 text-lg" style="color: black;">쪽지</button>
+                <a href="./login.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">로그인</button></a>
+            </div>
+        </div>
+        <hr class="mb-6 border-b">
+
+
+        <!-- Main Content -->
+        <div class="flex">
+            <!-- Left Column -->
+            <div class="flex-1 pr-4">
+                <!-- 달력 카드 -->
+                <div class="bg-white p-4 rounded-lg shadow mb-6">
  <div class="calendar-container">
         <h1>⚽ 원하시는 날짜를 선택해주세요 ⚽</h1>
         <!-- Pagination -->

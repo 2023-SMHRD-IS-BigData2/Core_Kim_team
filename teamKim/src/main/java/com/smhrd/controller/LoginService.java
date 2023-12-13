@@ -34,6 +34,7 @@ public class LoginService extends HttpServlet {
 			vo = new MemberDAO().login(vo.getId());
 			HttpSession session = request.getSession();
 			session.setAttribute("vo", vo);
+			System.out.println("통과 집가도록");
 			response.sendRedirect("./Feed.jsp");
 			
 		} else {
