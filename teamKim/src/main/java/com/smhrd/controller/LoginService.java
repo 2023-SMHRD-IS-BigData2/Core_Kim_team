@@ -32,16 +32,18 @@ public class LoginService extends HttpServlet {
 		if (cnt == 1) {
 
 			vo = new MemberDAO().login(vo.getId());
+			HttpSession session = request.getSession();
+			session.setAttribute("vo", vo);
+			response.sendRedirect("./Feed.jsp");
 			
 		} else {
 
-			cnt = new MemberDAO().join(vo);
+			cnt = new MemberDAO().join(vo);			
+			response.sendRedirect("./Update.jsp");
 
 		}
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("vo", vo);
-		response.sendRedirect("./feed.jsp");
+		
 
 
 	}

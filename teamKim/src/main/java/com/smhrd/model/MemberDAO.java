@@ -41,7 +41,7 @@ public class MemberDAO {
 		try {
 			member = sqlSession.selectOne("com.smhrd.database.MemberMapper.Login", u_id);
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		} finally {
 			sqlSession.close();
 		}
@@ -53,7 +53,7 @@ public class MemberDAO {
 		try {
 			cnt = sqlSession.update("com.smhrd.database.MemberMapper.updateMember", updateMember);
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		} finally {
 			sqlSession.close();
 		}
