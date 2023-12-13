@@ -13,7 +13,6 @@
     <title>feed</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/Feed.css" rel="stylesheet" />
-    
 </head>
 
 <body class="bg-gray-100">
@@ -39,7 +38,7 @@
             </div>
             <div class="flex space-x-2">
                 <a href="javascript:MessageWrite()"><button class="rounded-button login-button p-4 text-lg" style="color: black;">쪽지</button></a>
-                <a href="./Login.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">로그인</button></a>
+                <a href="./login.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">로그인</button></a>
             </div>
         </div>
       <hr class="mb-6 border-b">
