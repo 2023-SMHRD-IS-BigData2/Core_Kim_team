@@ -63,13 +63,7 @@ body {
     color: #fff;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
 }
-
-.send:hover {
-    background-color: #375abb;
-}
-
 .comment-list {
     list-style: none;
     padding: 0;
