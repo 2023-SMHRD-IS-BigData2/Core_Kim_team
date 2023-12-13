@@ -63,7 +63,7 @@ public class FeedService extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		response.sendRedirect("s");
+		response.sendRedirect("./feed.jsp");
 
 	}
 

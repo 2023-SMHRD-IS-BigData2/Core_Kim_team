@@ -1,0 +1,82 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fc;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card {
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #62ac2e;
+    color: #fff;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.header img {
+    margin-right: 5px;
+}
+
+.header .flex-space-x-4 {
+    display: flex;
+    space-x: 4;
+    justify-content: flex-start;
+}
+
+.header .flex-space-x-2 {
+    display: flex;
+    space-x: 2;
+    justify-content: flex-start;
+}
+
+.rounded-button {
+    color: black;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.rounded-button.login-button {
+    margin-right: 5px;
+}
+.editor-toolbar button {
+padding: 10px 200px;
+}
+.editor-toolbar i.fa-regular {
+margin-right: 50px;
+}
+.editor-toolbar i.fa-solid {
+margin-right: 50px;
+}
+.editor-content {
+width: 100%; /* 100%로 설정하여 가로 전체 폭을 차지하도록 함 */
+min-height: 500px; /* 최소 높이를 지정 */
+box-sizing: border-box; /* padding과 border를 포함하여 너비를 계산하도록 함 */
+overflow-y: auto; /* 세로 스크롤이 필요한 경우 스크롤을 표시함 */
+}
