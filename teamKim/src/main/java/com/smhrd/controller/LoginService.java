@@ -44,8 +44,6 @@ public class LoginService extends HttpServlet {
 
 		}
 		
-		
-
 
 	}
 
