@@ -40,9 +40,9 @@ public class MatchService extends HttpServlet {
       }
       if (place != null) {
     	  mercenary_match.setPlace(place);
-    	  int ck = new Mercenary_MatchDAO().makeMEMA(mercenary_match);
+    	  int ck = new MatchDAO().makeMEMA(match);
       }else {
-    	  int ck = new Mercenary_MatchDAO().makeME(mercenary_match);
+    	  int ck = new MatchDAO().makeME(match);
       }
       
       
