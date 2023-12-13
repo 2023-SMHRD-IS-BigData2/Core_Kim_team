@@ -1,3 +1,9 @@
+<%@page import="com.smhrd.model.Team"%>
+<%@page import="com.smhrd.model.MemberDAO"%>
+<%@page import="com.smhrd.model.MatchingDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.fasterxml.jackson.databind.deser.DataFormatReaders.Match"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,7 +23,7 @@
                   List<Match> ma2 = new ArrayList<Match>();
                   List<Match> me1 = new ArrayList<Match>();
                   List<Match> me2 = new ArrayList<Match>();
-                  mema = new MatchDAO().allMEMAdate(date);
+                  mema = new MatchingDAO().allMEMAdate(date);
 
                   for (Match i : mema) {
 
@@ -74,8 +80,8 @@
                      <tbody>
                         <%
                         for (Match i : ma1) {
-                           float star = new MatchDAO().starNum(i.getUser_index());
-                           Team team = new MatchDAO().userTeam(i.getUser_index());
+                           float star = new MatchingDAO().starNum(i.getUser_index());
+                           Team team = new MatchingDAO().userTeam(i.getUser_index());
                            String f_star = null;
                            if(star>6){
                               f_star = "5점(0)";
