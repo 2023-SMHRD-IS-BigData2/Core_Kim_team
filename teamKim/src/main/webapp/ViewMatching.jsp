@@ -1,3 +1,9 @@
+<%@page import="com.smhrd.model.Team"%>
+<%@page import="com.smhrd.model.MemberDAO"%>
+<%@page import="com.smhrd.model.MatchingDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.fasterxml.jackson.databind.deser.DataFormatReaders.Match"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,14 +18,14 @@
 
                   System.out.print(date);
 
-                  List<Mercenary_Match> mema = new ArrayList<Mercenary_Match>();
-                  List<Mercenary_Match> ma1 = new ArrayList<Mercenary_Match>();
-                  List<Mercenary_Match> ma2 = new ArrayList<Mercenary_Match>();
-                  List<Mercenary_Match> me1 = new ArrayList<Mercenary_Match>();
-                  List<Mercenary_Match> me2 = new ArrayList<Mercenary_Match>();
-                  mema = new Mercenary_MatchDAO().allMEMAdate(date);
+                  List<Match> mema = new ArrayList<Match>();
+                  List<Match> ma1 = new ArrayList<Match>();
+                  List<Match> ma2 = new ArrayList<Match>();
+                  List<Match> me1 = new ArrayList<Match>();
+                  List<Match> me2 = new ArrayList<Match>();
+                  mema = new MatchingDAO().allMEMAdate(date);
 
-                  for (Mercenary_Match i : mema) {
+                  for (Match i : mema) {
 
                      switch (i.getMm()) {
                      case 1:
@@ -73,9 +79,9 @@
                      </tr>
                      <tbody>
                         <%
-                        for (Mercenary_Match i : ma1) {
-                           float star = new Mercenary_MatchDAO().starNum(i.getUser_index());
-                           Team team = new Mercenary_MatchDAO().userTeam(i.getUser_index());
+                        for (Match i : ma1) {
+                           float star = new MatchingDAO().starNum(i.getUser_index());
+                           Team team = new MatchingDAO().userTeam(i.getUser_index());
                            String f_star = null;
                            if(star>6){
                               f_star = "5점(0)";
@@ -131,7 +137,7 @@
                      </thead>
                      <tbody>
                         <%
-                        for (Mercenary_Match i : me1) {
+                        for (Match i : me1) {
                         %>
                         <tr align="center">
                            <td><%=new MemberDAO().login(i.getUser_index()).getNick()%></td>
