@@ -12,13 +12,13 @@ import lombok.ToString;
 @NonNull
 @Getter
 public class Match {
-	 // 매칭, 용병 피드 추가시 모든 정보 입력!
-	   private int f_index;
+	 // 매칭, 용병 피드 추가시 모든 정보 입력!d
+	   private int M_index;
 	   @NonNull private int mm; // 1 = 매칭 / 2 = 용병 / 3 = 매칭 성사 / 4 = 용병 성사
 	   @NonNull private String m_date; // 경기날짜
 	   @NonNull private String user_index; // 작성자 고유번호
-	   @NonNull private String start_hour;
-	   @NonNull private String last_hour;
+	   @NonNull private String start_time;
+	   @NonNull private String finish_time;
 	   @NonNull private String people_num;
 	   @NonNull private String f_level;
 	   private String writing;

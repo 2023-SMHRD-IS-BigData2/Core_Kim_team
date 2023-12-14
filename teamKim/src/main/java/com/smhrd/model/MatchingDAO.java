@@ -37,11 +37,11 @@ public class MatchingDAO {
 		return matching;
 	}
 	
-	public int sacramentMatching(Matching matching) {
+	public int checkMatching(Matching matching) {
 		int cnt = 0;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);
 		try {
-			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.sacramentMatching", matching);
+			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.checkMatching", matching);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -76,11 +76,11 @@ public class MatchingDAO {
 		return cnt;
 	}
 	
-	public int delMatch(int f_index) {
+	public int delMatch(int mc_index) {
 		int cnt = 0;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);
 		try {
-			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.delMatching", f_index);
+			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.delMatching", mc_index);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

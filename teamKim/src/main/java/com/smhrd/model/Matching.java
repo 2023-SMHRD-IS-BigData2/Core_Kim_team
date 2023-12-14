@@ -14,10 +14,10 @@ import lombok.ToString;
 @RequiredArgsConstructor
 public class Matching {
 	
-	private int m_index;  // 매칭 인덱스
+	private int mc_index;  // 매칭 인덱스
 	@NonNull private String writer;  // 매칭글 작성자
 	@NonNull private String challenger;  // 매칭 신청자
-	@NonNull private int f_index;      // 매칭 고유번호
+	@NonNull private int m_index;      // 매칭 고유번호
 
 	private char matching;    // 성사 여부 OX
 
