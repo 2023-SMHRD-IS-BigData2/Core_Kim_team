@@ -14,8 +14,10 @@
 		<typeAlias type="com.smhrd.model.Match" alias="Match"/>
 		<typeAlias type="com.smhrd.model.Team" alias="Team"/>
 		<typeAlias type="com.smhrd.model.Text" alias="Text"/>
+		<typeAlias type="com.smhrd.model.Friend" alias="Friend"/>
+		
 	</typeAliases>			
-					
+				
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
@@ -33,5 +35,6 @@
     <mapper resource="com/smhrd/database/FeedMapper.xml"/>
     <mapper resource="com/smhrd/database/TeamMapper.xml"/>
     <mapper resource="com/smhrd/database/TextMapper.xml"/>
+    <mapper resource="com/smhrd/database/FriendMapper.xml"/>
   </mappers>
 </configuration>
