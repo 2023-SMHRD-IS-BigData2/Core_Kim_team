@@ -13,6 +13,7 @@
     <title>feed</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/Feed.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
 </head>
 
@@ -74,7 +75,8 @@
                            <tbody>
                               <tr>
                                  <td>
-                                    <img alt="" src="img/your_feed_image.jpg" class="feed-image">                    
+                                    <div><img alt="" src="img/your_feed_image.jpg" class="feed-image"></div>
+                                    <div style="font-size: 1.5em; margin-left: 10px;"><i class="fa-regular fa-thumbs-up"></i></div>              
                                  </td>
                                  <td>
                                     <div style="overflow-y: scroll; max-height: 500px;">
