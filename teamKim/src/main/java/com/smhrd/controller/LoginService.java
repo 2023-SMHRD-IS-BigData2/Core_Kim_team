@@ -40,7 +40,7 @@ public class LoginService extends HttpServlet {
 		} else {
 
 			cnt = new MemberDAO().join(vo);			
-			response.sendRedirect("./Update.jsp");
+			response.sendRedirect("./Feed.jsp");
 
 		}
 		

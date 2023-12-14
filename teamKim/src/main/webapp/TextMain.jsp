@@ -1,3 +1,8 @@
+<%@page import="com.smhrd.model.Text"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.TextDAO"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,6 +57,10 @@
     <title>쪽지함</title>
 </head>
 <body>
+	<%
+	Member vo = (Member) session.getAttribute("vo");
+	List<Text> t_list = new TextDAO().showText(vo.getId());
+	%>
     <!-- 쪽지함 영역 -->
     <div class="notebox">
         <!-- 쪽지함 내용은 여기에 추가하세요 -->
@@ -59,7 +68,7 @@
         <div>
             <ul class="comment-list">
                 <li><strong>Your Commenter:</strong> Comment 1</li>
-                <p>현재 시간: <%= new java.util.Date() %></p>
+                <p></p>
             </ul>
         </div>
         <!-- 쪽지 보내기 버튼 -->
