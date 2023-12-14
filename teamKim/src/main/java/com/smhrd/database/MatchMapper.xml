@@ -5,12 +5,11 @@
   <!--  config에 Alias추가해야됨 -->
 <mapper namespace="com.smhrd.database.MatchMapper">
    
-  <!--    id랑 table명 수정 
    <insert id="makeMatch" parameterType="Mercenary_Match">
       INSERT INTO MATCH VALUES(MATCH_INDEX.nextval,#{mm}, #{m_date},#{user_index},#{start_hour},#{last_hour},
       #{people_num},#{f_level},#{writing}, #{place})
    </insert>
-   용병(yb) 만들기
+
    <insert id="makeYb" parameterType="Mercenary_Match">
       INSERT INTO MATCH VALUES(MATCH_INDEX.nextval,#{mm}, #{m_date},#{user_index},#{start_hour},#{last_hour},
       #{people_num},#{f_level},#{writing}, null)
@@ -59,5 +58,5 @@
    
    <select id="feedback_c" resultType="Matching" parameterType="String">
    SELECT * FROM MATCHING WHERE CHALLENGER = #{id} AND MATCHING = 'O'
-   </select> -->
+   </select> 
 </mapper>
