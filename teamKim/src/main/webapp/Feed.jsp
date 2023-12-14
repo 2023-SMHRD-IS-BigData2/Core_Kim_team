@@ -17,9 +17,9 @@
 
 <body class="bg-gray-100">
 <script type="text/javascript">
-      function MessageWrite() {
-         window.open("MessageWrite.jsp", "MessageWrite",
-               "width=400, height=500, top=10, left=10")
+      function TextMain() {
+         window.open("TextMain.jsp", "TextMain",
+               "width=500, height=600, top=10, left=10")
       }
    </script>
     <div class="container mx-auto p-4">
@@ -37,7 +37,7 @@
 
             </div>
             <div class="flex space-x-2">
-                <a href="javascript:MessageWrite()"><button class="rounded-button login-button p-4 text-lg" style="color: black;">쪽지</button></a>
+                <a href="javascript:TextMain()"><button class="rounded-button login-button p-4 text-lg" style="color: black;">쪽지</button></a>
                 <a href="./Login.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">로그인</button></a>
             </div>
         </div>
