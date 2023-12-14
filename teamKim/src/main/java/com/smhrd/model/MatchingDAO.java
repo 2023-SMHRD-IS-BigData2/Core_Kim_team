@@ -50,11 +50,11 @@ public class MatchingDAO {
 		return cnt;
 	}
 	
-	public int delAllMatching(int f_index) {
+	public int delAllMatching(int mc_index) {
 		int cnt = 0;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);
 		try {
-			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.delAllMatching", f_index);
+			cnt = sqlSession.insert("com.smhrd.database.MatchMapper.delAllMatching", mc_index);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
