@@ -14,6 +14,7 @@
 		<typeAlias type="com.smhrd.model.Match" alias="Match"/>
 		<typeAlias type="com.smhrd.model.Team" alias="Team"/>
 		<typeAlias type="com.smhrd.model.Friend" alias="Friend"/>
+		
 	</typeAliases>			
 				
   <environments default="development">
