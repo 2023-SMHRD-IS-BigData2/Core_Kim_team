@@ -36,10 +36,10 @@ public class MemberDAO {
 		return cnt;
 	}
 
-	public Member login(String u_id) {
+	public Member login(String id) {
 		Member member = null;
 		try {
-			member = sqlSession.selectOne("com.smhrd.database.MemberMapper.Login", u_id);
+			member = sqlSession.selectOne("com.smhrd.database.MemberMapper.Login", id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

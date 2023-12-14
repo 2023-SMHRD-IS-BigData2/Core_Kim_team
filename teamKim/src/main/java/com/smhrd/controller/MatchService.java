@@ -41,9 +41,9 @@ public class MatchService extends HttpServlet {
       
       if (place != null) {
     	  match.setPlace(place);
-    	  int ck = new MatchDAO().makeMEMA(match);
+    	  int ck = new MatchDAO().makeMatch(match);
       }else {
-    	  int ck = new MatchDAO().makeME(match);
+    	  int ck = new MatchDAO().makeYb(match);
       }
       
       response.sendRedirect("ViewMatch.jsp?date="+matchDay);

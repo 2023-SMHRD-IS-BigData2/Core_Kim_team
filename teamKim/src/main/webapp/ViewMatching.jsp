@@ -91,14 +91,14 @@
                         %>
                         <tr align="center">
                            <td><%=new MemberDAO().login(i.getUser_index()).getNick()%></td>
-                           <td><%=i.getStart_hour()%></td>
-                           <td><%=i.getLast_hour()%></td>
+                           <td><%=i.getStart_time()%></td>
+                           <td><%=i.getFinish_time()%></td>
                            <td><%=i.getF_level()%></td>
                            <td><%=i.getPeople_num()%></td>
                            <td> <%=f_star %>
                            </td>
                            <td><%=i.getWriting()%></td>
-                           <td><a href="TeamMatchService?writer=<%=i.getUser_index()%>&f_index=<%=i.getF_index()%>">
+                           <td><a href="TeamMatchService?writer=<%=i.getUser_index()%>&f_index=<%=i.getM_index()%>">
                            <i class="fas fa-thumbs-up"></i></a></td>
                         </tr>
                         <%
@@ -141,8 +141,8 @@
                         %>
                         <tr align="center">
                            <td><%=new MemberDAO().login(i.getUser_index()).getNick()%></td>
-                           <td><%=i.getStart_hour()%></td>
-                           <td><%=i.getLast_hour()%></td>
+                           <td><%=i.getStart_time()%></td>
+                           <td><%=i.getFinish_time()%></td>
                            <td><%=i.getF_level()%></td>
                            <td><%=i.getPeople_num()%></td>
                            <td colspan="2"><%=i.getWriting()%></td>
