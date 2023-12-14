@@ -12,6 +12,7 @@
 		<typeAlias type="com.smhrd.model.Member" alias="Member"/>
 		<typeAlias type="com.smhrd.model.Feed" alias="Feed"/>
 		<typeAlias type="com.smhrd.model.Match" alias="Match"/>
+		<typeAlias type="com.smhrd.model.Matching" alias="Matching"/>
 		<typeAlias type="com.smhrd.model.Team" alias="Team"/>
 		<typeAlias type="com.smhrd.model.Friend" alias="Friend"/>
 		
