@@ -67,8 +67,10 @@
         <h1>쪽지함</h1>
         <div>
             <ul class="comment-list">
-                <li><strong>Your Commenter:</strong> Comment 1</li>
-                <p></p>
+            <% for(int i = 0; i < t_list.size(); i++){ %>
+                <li><strong><%=t_list.get(i).getSender() %>:</strong><%=t_list.get(i).getText() %></li>
+                <p><%=t_list.get(i).getM_date() %></p>
+              <%} %>
             </ul>
         </div>
         <!-- 쪽지 보내기 버튼 -->
