@@ -10,12 +10,12 @@
 
 	<!-- 친구 추가 -->
 	<insert id="Add" parameterType="Friend">
-		INSERT INTO TB_FRIEND VALUES (#{applicant},#{acceptor},'X')
+		INSERT INTO FRIEND VALUES (#{applicant},#{acceptor},'X')
 	</insert>
 
 	<!-- 중복확인 -->
 	<update id="Set" parameterType="Friend">
-		UPDATE TB_FRIEND SET
+		UPDATE FRIEND SET
 		APPLICANT = #{applicant} , ACCEPTOR = #{acceptor} WHERE APPLICANT =
 		#{applicant} AND ACCEPTOR = #{acceptor}
 	</update>
