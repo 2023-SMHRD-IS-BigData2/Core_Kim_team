@@ -42,7 +42,7 @@ public class TextService extends HttpServlet {
          System.out.println("쪽지 전송 실패");
       }
       
-      response.sendRedirect("MessageWrite.jsp");
+      response.sendRedirect("TextWrite.jsp");
       
    }
 
