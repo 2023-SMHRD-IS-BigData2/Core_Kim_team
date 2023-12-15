@@ -13,8 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>feed</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="css/Feed.css" rel="stylesheet" />
-
+<!-- <link href="css/Feed.css" rel="stylesheet" /> -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -68,6 +67,14 @@
 			<!-- Left Column -->
 			<div class="flex-1 pr-4">
 
+					<%
+					List<Feed> feeds = new FeedDAO().totalFeed();
+					%>
+
+
+							<%
+							for (Feed i : feeds) {
+							%>
 				<!-- 피드 카드 -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
@@ -79,16 +86,8 @@
 							</a>
 						</h6>
 					</div>
-					<%
-					List<Feed> feeds = new FeedDAO().totalFeed();
-					%>
-
-
 					<div class="card-body">
 						<div class="container-fluid">
-							<%
-							for (Feed i : feeds) {
-							%>
 							<div class="table-responsive">
 								<table class="table table-bordered" id="dataTable"
 									style="width: 100%;" cellspacing="0">
@@ -195,12 +194,12 @@
 									</tbody>
 								</table>
 							</div>
-							<%
-							}
-							%>
 						</div>
 					</div>
 				</div>
+							<%
+							}
+							%>
 				<!-- Q&A Section -->
 
 			</div>
