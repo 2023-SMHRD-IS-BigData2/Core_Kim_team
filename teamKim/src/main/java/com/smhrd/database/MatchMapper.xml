@@ -2,9 +2,8 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <!--  config에 Alias추가해야됨 -->
-<mapper namespace="com.smhrd.database.MatchMapper">
-   
+  <mapper namespace="com.smhrd.database.MatchMapper">
+
    <insert id="makeMatch" parameterType="Match">
       INSERT INTO MATCH VALUES(MATCH_INDEX.nextval,#{mm}, #{m_date},#{user_index},#{start_time},#{finish_time},
       #{people_num},#{f_level},#{writing}, #{place})
@@ -36,7 +35,6 @@
    SELECT * FROM MATCHING WHERE WRITER = #{id} AND MATCHING = 'X'
    </select>
    
-   <!--  매치 성사여부 --> 
    <update id="succeedMatching" parameterType="Matching">
    UPDATE MATCHING set MATCHING = 'O' WHERE M_INDEX = #{m_index}  AND CHALLENGER =#{challenger} AND WRITER=#{writer} 
    </update>

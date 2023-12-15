@@ -1,8 +1,8 @@
 <%@page import="com.smhrd.model.Team"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="com.smhrd.model.MatchingDAO"%>
+<%@page import="com.smhrd.model.Match"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.fasterxml.jackson.databind.deser.DataFormatReaders.Match"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -88,7 +88,7 @@
                            }else{
                               f_star = star+"점("+team.getT_estnum()+")";
                            }
-                        %>
+                        %> 
                         <tr align="center">
                            <td><%=new MemberDAO().login(i.getUser_index()).getNick()%></td>
                            <td><%=i.getStart_time()%></td>
@@ -146,7 +146,7 @@
                            <td><%=i.getF_level()%></td>
                            <td><%=i.getPeople_num()%></td>
                            <td colspan="2"><%=i.getWriting()%></td>
-                           <td><a href="FriendService?id=<%=i.getUser_index()%>">
+                           <td><a href="AFriendService?id=<%=i.getUser_index()%>">
                               <i class="fas fa-user fa-fw"
                               style="color: #62ac2e"></i>
                            </a></td>
