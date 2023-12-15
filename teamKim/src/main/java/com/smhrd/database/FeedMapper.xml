@@ -5,16 +5,16 @@
   
 <mapper namespace="com.smhrd.database.FeedMapper">
 	<insert id="writeFeed" parameterType="Feed">
-		insert into FEED values (FEED_INDEX.nextval,#{f_user_index},#{feed_title},#{feed_content}, sysdate, #{feed_file}, 0)
+		insert into FEED values (FEED_INDEX.nextval,#{f_id},#{f_content}, sysdate, #{f_file}, 0)
 	</insert>
 	<select id="totalFeed" resultType="Feed">
-		select * from FEED order by feed_index DESC
+		select * from FEED order by f_index DESC
 	</select>
 	<delete id="deleteFeed">
-		delete from FEED where FEED_INDEX=#{feed_index} 
+		delete from FEED where F_INDEX=#{f_index} 
 	</delete>
 	<select id="detailFeed" resultType="Feed">
-		select * from FEED where FEED_INDEX=#{feed_index}
+		select * from FEED where F_INDEX=#{f_index}
 	</select>
 	
 	<!-- <insert id="sendFeedlike" parameterType="FeedLike">
