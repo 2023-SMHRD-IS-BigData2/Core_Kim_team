@@ -134,55 +134,7 @@
 													<ul class="comment-list">
 														<li><strong>Your Commenter:</strong> Comment 1</li>
 													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-
+													
 
 												</div>
 												<div class="comment-form">
