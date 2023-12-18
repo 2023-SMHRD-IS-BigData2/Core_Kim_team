@@ -1,3 +1,6 @@
+<%@page import="oracle.net.aso.i"%>
+<%@page import="com.smhrd.model.Comment"%>
+<%@page import="com.smhrd.model.CommentDAO"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@page import="com.smhrd.model.FeedDAO"%>
 <%@page import="com.smhrd.model.Feed"%>
@@ -13,7 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>feed</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<!-- <link href="css/Feed.css" rel="stylesheet" /> -->
+<link href="css/Feed.css" rel="stylesheet" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -74,16 +77,19 @@
 
 							<%
 							for (Feed i : feeds) {
+							List<Comment> Comments = new CommentDAO().showComment(i.getF_index());
 							%>
 				<!-- 피드 카드 -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-primary">
+						<h6 class="m-0 font-weight-bold text-primary"><%=i.getF_id() %></h6>
+						<div>
 							<a href="MessageWrite.jsp"> <i
-								class="fas fa-envelope fa-fw float-right" style="color: #62ac2e"></i>
+								class="fas fa-envelope fa-fw float-right" style="color: #fff"></i>
 							</a> <a href="FriendService?id="> <i
-								class="fas fa-user fa-fw float-right" style="color: #62ac2e"></i>
-							</a>
+								class="fas fa-user fa-fw float-right" style="color: #fff"></i>
+							</a>						
+						</div>
 						</h6>
 					</div>
 					<div class="card-body">
@@ -106,37 +112,18 @@
 												</div>
 												<div style="font-size: 1.5em; margin-left: 10px;">
 													<i class="fa-regular fa-thumbs-up"></i>
+													<%=i.getF_content() %>
 												</div>
 											</td>
 											<td>
 												<div style="overflow-y: scroll; max-height: 500px;">
+												<%for(Comment j : Comments){ %>
 													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
+														<li><strong><%= j.getC_NAME() %>:</strong> <%=j.getC_COMMENT() %></li>
 													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													</ul>
-													<ul class="comment-list">
-														<li><strong>Your Commenter:</strong> Comment 1</li>
-													</ul>
-													
-
+													<%} %>
 												</div>
+											
 												<div class="comment-form">
 													<input type="text" name="C_COMMENT" placeholder="댓글을 입력하세요">
 													<input type="submit" value="전송" class="send">

@@ -16,7 +16,7 @@
 		<typeAlias type="com.smhrd.model.Team" alias="Team"/>
 		<typeAlias type="com.smhrd.model.Text" alias="Text"/>
 		<typeAlias type="com.smhrd.model.Friend" alias="Friend"/>
-		
+		<typeAlias type="com.smhrd.model.Comment" alias="Comment"/>
 	</typeAliases>			
 				
   <environments default="development">
@@ -37,5 +37,6 @@
     <mapper resource="com/smhrd/database/TeamMapper.xml"/>
     <mapper resource="com/smhrd/database/TextMapper.xml"/>
     <mapper resource="com/smhrd/database/FriendMapper.xml"/>
+    <mapper resource="com/smhrd/database/CommentMapper.xml"/>
   </mappers>
 </configuration>
