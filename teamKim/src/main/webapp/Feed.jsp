@@ -70,25 +70,25 @@
 			<!-- Left Column -->
 			<div class="flex-1 pr-4">
 
-					<%
-					List<Feed> feeds = new FeedDAO().totalFeed();
-					%>
+				<%
+				List<Feed> feeds = new FeedDAO().totalFeed();
+				%>
 
 
-							<%
-							for (Feed i : feeds) {
-							List<Comment> Comments = new CommentDAO().showComment(i.getF_index());
-							%>
+				<%
+				for (Feed i : feeds) {
+					List<Comment> Comments = new CommentDAO().showComment(i.getF_index());
+				%>
 				<!-- 피드 카드 -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-primary"><%=i.getF_id() %></h6>
+						<h6 class="m-0 font-weight-bold text-primary"><%=i.getF_id()%></h6>
 						<div>
 							<a href="MessageWrite.jsp"> <i
 								class="fas fa-envelope fa-fw float-right" style="color: #fff"></i>
 							</a> <a href="FriendService?id="> <i
 								class="fas fa-user fa-fw float-right" style="color: #fff"></i>
-							</a>						
+							</a>
 						</div>
 						</h6>
 					</div>
@@ -112,22 +112,31 @@
 												</div>
 												<div style="font-size: 1.5em; margin-left: 10px;">
 													<i class="fa-regular fa-thumbs-up"></i>
-													<%=i.getF_content() %>
+													<%=i.getF_content()%>
 												</div>
 											</td>
 											<td>
 												<div style="overflow-y: scroll; max-height: 500px;">
-												<%for(Comment j : Comments){ %>
+													<%
+													for (Comment j : Comments) {
+													%>
 													<ul class="comment-list">
-														<li><strong><%= j.getC_NAME() %>:</strong> <%=j.getC_COMMENT() %></li>
+														<li><strong><%=j.getC_NAME()%>:</strong> <%=j.getC_COMMENT()%></li>
 													</ul>
-													<%} %>
+													<%
+													}
+													%>
 												</div>
-											
+											<%if(vo!=null){ %>
 												<div class="comment-form">
-													<input type="text" name="C_COMMENT" placeholder="댓글을 입력하세요">
-													<input type="submit" value="전송" class="send">
+													<form action="CommentService">
+														<input type="hidden" name="F_INDEX"value="<%=i.getF_index()%>"> 
+														<input type="hidden" name="C_NAME" value="<%=vo.getNick()%>">
+														<input type="text" name="C_COMMENT"placeholder="댓글을 입력하세요">
+														<input type="submit" value="전송" class="send">
+													</form>
 												</div>
+												<%} %>
 											</td>
 										</tr>
 									</tbody>
@@ -136,9 +145,9 @@
 						</div>
 					</div>
 				</div>
-							<%
-							}
-							%>
+				<%
+				}
+				%>
 				<!-- Q&A Section -->
 
 			</div>
