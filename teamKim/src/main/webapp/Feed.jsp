@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="oracle.net.aso.i"%>
 <%@page import="com.smhrd.model.Comment"%>
 <%@page import="com.smhrd.model.CommentDAO"%>
@@ -82,14 +83,20 @@
 				<!-- 피드 카드 -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-primary"><%=i.getF_id()%></h6>
+						<h6 class="m-0 font-weight-bold text-primary"><%
+												String index = i.getF_id();
+												Member member = new MemberDAO().login(index);
+												%>
+												<%=member.getNick()%></h6>
+						<%if(vo!=null){ %>
 						<div>
 							<a href="javascript:TextMain()"> <i
 								class="fas fa-envelope fa-fw float-right" style="color: #fff"></i>
-							</a> <a href="FriendService?id="> <i
+							</a> <a href="AFriendService?id=<%=i.getF_id()%>"> <i
 								class="fas fa-user fa-fw float-right" style="color: #fff"></i>
 							</a>
 						</div>
+						<%} %>
 						</h6>
 					</div>
 					<div class="card-body">

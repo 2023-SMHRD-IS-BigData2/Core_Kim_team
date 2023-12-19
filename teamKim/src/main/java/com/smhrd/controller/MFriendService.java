@@ -14,52 +14,45 @@ import com.smhrd.model.Member;
 
 @WebServlet("/MFriendService")
 public class MFriendService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+   protected void service(HttpServletRequest request, HttpServletResponse response)
+         throws ServletException, IOException {
 
-		HttpSession session = request.getSession();
-		Member vo = (Member) session.getAttribute("vo");
+      HttpSession session = request.getSession();
+      Member vo = (Member) session.getAttribute("vo");
+      
+      String acceptor = request.getParameter("id");
+      String applicant = vo.getId();
+      Friend user = new Friend(applicant, acceptor);
 
-		Boolean check = Boolean.parseBoolean(request.getParameter("check"));
-		if (check) {
-			// 친구 수락
-			String acceptor = request.getParameter("id");
+      Boolean check = Boolean.parseBoolean(request.getParameter("check"));
+      if (check) {
+         // 친구 수락
+      
+         int cnt = new FriendDAO().accept(user);
 
-			String applicant = vo.getId();
+         if (cnt == 2) {
+            System.out.println("친구 추가 성공");
+         } else {
+            System.out.println("친구 추가 실패");
+         }
 
-			Friend user = new Friend(applicant, acceptor);
+      } else {
 
-			int cnt = new FriendDAO().accept(user);
+         int cnt = new FriendDAO().reject(user);
 
-			if (cnt == 2) {
-				System.out.println("친구 추가 성공");
-			} else {
-				System.out.println("친구 추가 실패");
-			}
+         if (cnt > 0) {
+            System.out.println("삭제 성공");
+         } else {
+            System.out.println("삭제 실패");
 
-		} else {
+         }
 
-			String applicant = request.getParameter("id");
-
-			String acceptor = vo.getId();
-
-			Friend user = new Friend(applicant, acceptor);
-
-			int cnt = new FriendDAO().reject(user);
-
-			if (cnt > 0) {
-				System.out.println("삭제 성공");
-			} else {
-				System.out.println("삭제 실패");
-
-			}
-
-		}
-		
-		response.sendRedirect("Main.jsp");
+      }
+      
+      response.sendRedirect("Feed.jsp");
 
 
-	}
+   }
 }

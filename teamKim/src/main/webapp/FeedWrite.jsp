@@ -45,6 +45,7 @@
             <div class="flex-1 pr-4">
 
                 <!-- 피드 카드 -->
+                <form action="./FeedService" method="post"enctype="multipart/form-data">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">

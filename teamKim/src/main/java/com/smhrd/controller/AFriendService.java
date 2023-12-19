@@ -14,40 +14,40 @@ import com.smhrd.model.Member;
 
 @WebServlet("/AFriendService")
 public class AFriendService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// 친구 추가
-		String acceptor = request.getParameter("id");
+   protected void service(HttpServletRequest request, HttpServletResponse response)
+         throws ServletException, IOException {
+      // 친구 추가
+      String acceptor = request.getParameter("id");
 
-		HttpSession session = request.getSession();
-		Member vo = (Member) session.getAttribute("vo");
+      HttpSession session = request.getSession();
+      Member vo = (Member) session.getAttribute("vo");
 
-		String applicant = vo.getId();
+      String applicant = vo.getId();
 
-		if (applicant.equals(acceptor)) {
+      if (applicant.equals(acceptor)) {
 
-			response.sendRedirect("RealMain.jsp");
+         System.out.println("본인 추가 불가");
 
-		} else {
-			Friend user = new Friend(applicant, acceptor);
+      } else {
+         Friend user = new Friend(applicant, acceptor);
 
-			int row = new FriendDAO().set(user);
+         int row = new FriendDAO().set(user);
 
-			if (row == 0) {
-				row = new FriendDAO().apply(user);
-				if (row > 0) {
-					System.out.println("친구 추가 전송");
-				} else {
-					System.out.println("친구 추가 실패");
-				}
-			} else {
-				System.out.println("중복 친구 추가");
-			}
+         if (row == 0) {
+            row = new FriendDAO().apply(user);
+            if (row > 0) {
+               System.out.println("친구 추가 전송");
+            } else {
+               System.out.println("친구 추가 실패");
+            }
+         } else {
+            System.out.println("중복 친구 추가");
+         }
 
-			response.sendRedirect("RealMain.jsp");
-		}
-	}
+      }
+      response.sendRedirect("Feed.jsp");
+   }
 
 }
