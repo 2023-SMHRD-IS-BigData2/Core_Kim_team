@@ -27,7 +27,7 @@
 	<script type="text/javascript">
 		function TextMain() {
 			window.open("TextMain.jsp", "TextMain",
-					"width=500, height=600, top=10, left=10")
+					"width=550, height=700, top=10, left=10")
 		}
 	</script>
 	<%
@@ -84,7 +84,7 @@
 					<div class="card-header py-3">
 						<h6 class="m-0 font-weight-bold text-primary"><%=i.getF_id()%></h6>
 						<div>
-							<a href="MessageWrite.jsp"> <i
+							<a href="javascript:TextMain()"> <i
 								class="fas fa-envelope fa-fw float-right" style="color: #fff"></i>
 							</a> <a href="FriendService?id="> <i
 								class="fas fa-user fa-fw float-right" style="color: #fff"></i>
@@ -155,8 +155,7 @@
 			<!-- Right Column -->
 			<div class="w-80 pl-4">
 				<!-- QR Code Widget -->
-				<div
-					class="bg-white p-4 rounded-lg shadow mb-6 flex justify-center items-center">
+				<div class="bg-white p-4 rounded-lg shadow mb-6 flex justify-center items-center">
 					<div class="bg-gray-300 h-24 w-24"></div>
 				</div>
 
