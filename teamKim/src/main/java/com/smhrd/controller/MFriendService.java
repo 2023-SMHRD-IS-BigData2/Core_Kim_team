@@ -21,16 +21,15 @@ public class MFriendService extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		Member vo = (Member) session.getAttribute("vo");
+		
+		String acceptor = request.getParameter("id");
+		String applicant = vo.getId();
+		Friend user = new Friend(applicant, acceptor);
 
 		Boolean check = Boolean.parseBoolean(request.getParameter("check"));
 		if (check) {
 			// 친구 수락
-			String acceptor = request.getParameter("id");
-
-			String applicant = vo.getId();
-
-			Friend user = new Friend(applicant, acceptor);
-
+		
 			int cnt = new FriendDAO().accept(user);
 
 			if (cnt == 2) {
@@ -40,12 +39,6 @@ public class MFriendService extends HttpServlet {
 			}
 
 		} else {
-
-			String applicant = request.getParameter("id");
-
-			String acceptor = vo.getId();
-
-			Friend user = new Friend(applicant, acceptor);
 
 			int cnt = new FriendDAO().reject(user);
 

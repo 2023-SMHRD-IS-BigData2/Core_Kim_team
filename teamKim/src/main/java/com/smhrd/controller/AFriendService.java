@@ -28,7 +28,7 @@ public class AFriendService extends HttpServlet {
 
 		if (applicant.equals(acceptor)) {
 
-			response.sendRedirect("RealMain.jsp");
+			System.out.println("본인 추가 불가");
 
 		} else {
 			Friend user = new Friend(applicant, acceptor);
@@ -46,8 +46,8 @@ public class AFriendService extends HttpServlet {
 				System.out.println("중복 친구 추가");
 			}
 
-			response.sendRedirect("RealMain.jsp");
 		}
+		response.sendRedirect("Main.jsp");
 	}
 
 }

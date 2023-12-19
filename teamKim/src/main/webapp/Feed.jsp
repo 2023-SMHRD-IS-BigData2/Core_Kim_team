@@ -86,7 +86,7 @@
 						<div>
 							<a href="javascript:TextMain()"> <i
 								class="fas fa-envelope fa-fw float-right" style="color: #fff"></i>
-							</a> <a href="FriendService?id="> <i
+							</a> <a href="AFriendService?id=<%=vo.getId()%>"> <i
 								class="fas fa-user fa-fw float-right" style="color: #fff"></i>
 							</a>
 						</div>
