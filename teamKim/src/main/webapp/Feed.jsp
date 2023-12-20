@@ -114,8 +114,8 @@
 										<tr>
 											<td>
 												<div>
-													<img alt="" src="img/your_feed_image.jpg"
-														class="feed-image">
+													<img alt="" src="img/<%=i.getF_file()%>"
+														object-fit: cover width="100%" height="300" class="feed-image" >
 												</div>
 												<div style="font-size: 1.5em; margin-left: 10px;">
 													<i class="fa-regular fa-thumbs-up"></i>

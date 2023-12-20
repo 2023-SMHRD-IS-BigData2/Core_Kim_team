@@ -15,36 +15,32 @@
 
 	<!-- 중복확인 -->
 	<update id="Set" parameterType="Friend">
-		UPDATE FRIEND SET
-		APPLICANT = #{applicant} , ACCEPTOR = #{acceptor} WHERE APPLICANT =
-		#{applicant} AND ACCEPTOR = #{acceptor}
+		UPDATE FRIEND SET APPLICANT = #{applicant} , ACCEPTOR = #{acceptor} 
+		WHERE APPLICANT = #{applicant} AND ACCEPTOR = #{acceptor}
 	</update>
 
 	<!-- 친구 요청 확인 -->
 	<select id="Check" parameterType="String" resultType="Friend">
-		SELECT * FROM TB_FRIEND WHERE ACCEPTOR = #{id} AND MATCH = 'X'
+		SELECT * FROM FRIEND WHERE ACCEPTOR = #{id} AND MATCH = 'X'
 	</select>
 
 	<!-- 친구 수락 -->
 	<update id="Accept1" parameterType="Friend">
-		UPDATE TB_FRIEND SET MATCH =
-		'O' WHERE ACCEPTOR = #{applicant} AND APPLICANT = #{acceptor}
+		UPDATE FRIEND SET MATCH ='O' WHERE ACCEPTOR = #{applicant} AND APPLICANT = #{acceptor}
 	</update>
 	<insert id="Accept2" parameterType="Friend">
-		INSERT INTO TB_FRIEND VALUES
-		(#{applicant},#{acceptor},'O')
+		INSERT INTO FRIEND VALUES (#{applicant},#{acceptor},'O')
 	</insert>
 
 	<!-- 친구 거절 -->
 	<delete id="Reject" parameterType="Friend">
-		DELETE FROM TB_FRIEND WHERE
-		APPLICANT = #{applicant} AND ACCEPTOR = #{acceptor}
+		DELETE FROM FRIEND WHERE APPLICANT = #{acceptor} AND ACCEPTOR = #{applicant}
 	</delete>
 
 
 	<!-- 친구 목록 -->
 	<select id="All" resultType="Friend" parameterType="String">
-		select * from TB_FRIEND where ACCEPTOR = #{ACCEPTOR} and match='O'
+		SELECT * FROM FRIEND WHERE ACCEPTOR = #{ACCEPTOR} AND MATCH='O'
 	</select>
 
 

@@ -21,12 +21,18 @@ public class Feed {
 	@NonNull private String f_id;  // 작성자
 	@NonNull private String f_content;   // 내용
     private Date f_date;  // 업로드 시각
-    private String f_file; // 파일 주소
+    @NonNull private String f_file; // 파일 주소
     private int f_likecnt; // 좋아요 수
-    
 
+    
+    public void setfile(String feed_file) {
+		this.f_file = feed_file;
+	}
     
     
 
 }
+
+
+
 

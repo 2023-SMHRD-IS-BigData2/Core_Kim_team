@@ -43,13 +43,15 @@ public class FeedService extends HttpServlet {
 		MultipartRequest multi;
 		try {
 			multi = new MultipartRequest(request, savePath, maxSize, encoding, rename);
-			String title = multi.getParameter("title");
-			String filename = multi.getFilesystemName("filename");
-			String content = multi.getParameter("content");
-
-			Feed feed_vo = new Feed(writer, title, content);
-			if (filename != null) {
-				feed_vo.setfile(filename);
+			String f_id = multi.getParameter("f_id");
+			String f_file = multi.getFilesystemName("f_file");
+			String f_content = multi.getParameter("f_content");
+			System.out.print(f_id);
+			System.out.print(f_file);
+			System.out.print(f_content);
+			Feed feed_vo = new Feed(f_id, f_content, f_file);
+			if (f_file != null) {
+				feed_vo.setfile(f_file);
 			}
 			System.out.println(feed_vo.toString());
 			int cnt = new FeedDAO().writeFeed(feed_vo);
@@ -63,7 +65,7 @@ public class FeedService extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		response.sendRedirect("./feed.jsp");
+		response.sendRedirect("./Feed.jsp");
 
 	}
 
