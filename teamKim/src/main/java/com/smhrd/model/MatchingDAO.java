@@ -11,6 +11,18 @@ public class MatchingDAO {
 
 	SqlSessionFactory sqlsessionFactory = SqlSessionManager.getSqlSession();
 
+	public void allMatchDate( vo) {
+		int cnt = 0;
+		SqlSession sqlSession = sqlsessionFactory.openSession(true);
+		try {
+			cnt = sqlSession.selectList("com.smhrd.database.MatchMapper.allMatchDate", vo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+	}
+		return cnt;
+	}
 	public int sendMatching(Matching vo) {
 		int cnt = 0;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);

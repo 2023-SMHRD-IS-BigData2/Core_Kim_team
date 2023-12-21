@@ -23,7 +23,8 @@
                   List<Match> ma2 = new ArrayList<Match>();
                   List<Match> me1 = new ArrayList<Match>();
                   List<Match> me2 = new ArrayList<Match>();
-                  mema = new MatchingDAO().allMEMAdate(date);
+                  
+                  mema = new MatchingDAO().allMatchDate(date);
 
                   for (Match i : mema) {
 
