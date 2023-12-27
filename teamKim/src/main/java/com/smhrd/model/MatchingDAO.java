@@ -11,11 +11,11 @@ public class MatchingDAO {
 
 	SqlSessionFactory sqlsessionFactory = SqlSessionManager.getSqlSession();
 
-	public void allMatchDate( vo) {
-		int cnt = 0;
+	public List<Match> allMatchDate(String date) {
+		List<Match> cnt = null;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);
 		try {
-			cnt = sqlSession.selectList("com.smhrd.database.MatchMapper.allMatchDate", vo);
+			cnt = sqlSession.selectList("com.smhrd.database.MatchMapper.allMatchDate", date);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -23,6 +23,7 @@ public class MatchingDAO {
 	}
 		return cnt;
 	}
+	
 	public int sendMatching(Matching vo) {
 		int cnt = 0;
 		SqlSession sqlSession = sqlsessionFactory.openSession(true);

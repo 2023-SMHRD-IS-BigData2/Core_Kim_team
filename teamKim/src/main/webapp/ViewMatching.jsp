@@ -79,24 +79,28 @@
                         <th><a> 매치 신청</a></th>
                      </tr>
                      <tbody>
-                        <%
+                         <%
                         for (Match i : ma1) {
-                           float star = new MatchingDAO().starNum(i.getUser_index());
-                           Team team = new MatchingDAO().userTeam(i.getUser_index());
+                          
+                          /*
+                          
+                         float star = new MatchingDAO().starNum(i.getUser_index());
+                         Team team = new MatchingDAO().userTeam(i.getUser_index());
                            String f_star = null;
                            if(star>6){
                               f_star = "5점(0)";
                            }else{
                               f_star = star+"점("+team.getT_estnum()+")";
-                           }
-                        %> 
+                           } 
+                          */
+                        %>  
                         <tr align="center">
                            <td><%=new MemberDAO().login(i.getUser_index()).getNick()%></td>
                            <td><%=i.getStart_time()%></td>
                            <td><%=i.getFinish_time()%></td>
                            <td><%=i.getF_level()%></td>
                            <td><%=i.getPeople_num()%></td>
-                           <td> <%=f_star %>
+                          <%-- <td> <%=f_star %> --%>
                            </td>
                            <td><%=i.getWriting()%></td>
                            <td><a href="TeamMatchService?writer=<%=i.getUser_index()%>&f_index=<%=i.getM_index()%>">
@@ -156,10 +160,9 @@
                         }
                         %>
                      </tbody>
-                     <%
-                     }
-                     %>
-                     </tbody>
+                 <%
+                   }
+                 %>                    
                   </table>
 </body>
 </html>
