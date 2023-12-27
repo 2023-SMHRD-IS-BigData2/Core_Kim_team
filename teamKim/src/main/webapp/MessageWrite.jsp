@@ -153,25 +153,24 @@ fieldset {
 		}
 	</script>
 	<div class="container">
-		<form id="contact" action="MessageService" method="post">
+		<form id="contact" action="TextService" method="post">
 			<%
 			Member vo = (Member) session.getAttribute("vo");
 			%>
 			<h3>Message</h3>
 			<h4>친구에게 문자를 보내세요</h4>
 			<input type="hidden" name="sender" id="name"
-				value=" <%-- <%=vo.getNick()%> --%> " />
+				value="<%=vo.getNick()%>" />
 			<fieldset>
-				<input placeholder="받는 사람" type="text" name="recipient" tabindex="1"
-					required autofocus>
+				
 				<legend>받는 사람</legend>
 				<select name="recipient">
-					<%--  <% List<Friend> friends =  new FriendDAO().All(vo.getId());
+					 <% List<Friend> friends =  new FriendDAO().All(vo.getId());
       for (Friend i : friends) {
       Member friend = new MemberDAO().login(i.getApplicant());
       %>
       	<option value="<%=friend.getId()%>"><%=friend.getNick()%></option>
-      <%}%> --%>
+      <%}%>
 				</select>
 			</fieldset>
 			<fieldset>
