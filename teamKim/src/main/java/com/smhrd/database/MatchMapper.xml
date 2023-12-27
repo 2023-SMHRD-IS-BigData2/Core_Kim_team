@@ -14,7 +14,7 @@
       #{people_num},#{f_level},#{writing}, null)
    </insert>
    
-   <select id="allMatchDate" resultType="Match">
+   <select id="allMatchDate" resultType="Match" >
       SELECT * FROM MATCH WHERE m_date in #{date}
    </select>
    
