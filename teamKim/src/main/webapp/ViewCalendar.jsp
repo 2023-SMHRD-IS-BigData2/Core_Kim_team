@@ -104,7 +104,7 @@
 
                             // 각 날짜를 처리하는 논리를 여기에 추가하세요
                             // 필요한 경우 클릭 이벤트를 추가하거나 필요에 맞게 사용자 지정하세요
-                            dayLink.href = `ViewMatching.jsp?date=${year}.${month}.${dateCounter}`;
+                            dayLink.href = "ViewMatching.jsp?date="+year+"."+month+"."+dateCounter;
                                                 if (month === 11 && dateCounter >= 19 && dateCounter <= 30) {
                                                     dayLink.classList.add("bold");
                                                 }
@@ -121,6 +121,7 @@
                 }
             }
 
+            
             function displayPagination() {
                 paginationContainer.innerHTML = "";
 

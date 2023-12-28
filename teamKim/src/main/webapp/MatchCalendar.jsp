@@ -95,18 +95,17 @@
 
                         if (i === 0 && j < firstDay) {
                             // 첫째 날 이전의 빈 셀 추가
-                        	dayLink.textContent = "";
+                           dayLink.textContent = "";
                         } else if (dateCounter <= lastDay) {
                             // 캘린더에 날짜 추가
                             
                             dayLink.href = "#";
                             dayLink.textContent = dateCounter;
-
-                            // 각 날짜를 처리하는 논리를 여기에 추가하세요
-                            // 필요한 경우 클릭 이벤트를 추가하거나 필요에 맞게 사용자 지정하세요
-                       
-                            dayLink.href = `Matching.jsp?#${year}.${month}.${dateCounter}`;
+                            dayLink.href = "Matching.jsp?#"+year+"."+month+"."+dateCounter;									
+                            /* dayLink.href = `Matching.jsp?#${year}.${month}.${dateCounter}`; */
+                            
                                                 if (month === 11 && dateCounter >= 19 && dateCounter <= 30) {
+
                                                     dayLink.classList.add("bold");
                                                 }
 
