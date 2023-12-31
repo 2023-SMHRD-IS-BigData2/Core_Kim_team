@@ -57,6 +57,25 @@
 
 			</div>
 			<div class="flex space-x-2">
+				<!-- 시작 -->
+				<div class="dropdown">
+  <button class="rounded-button login-button p-4 text-lg" style="color: black;">친구</button>
+  <div id="myDropdown" class="dropdown-content">
+    <div class="hidden-div">
+      <!-- 드롭다운 내용을 원하는 대로 추가 -->
+      나타날 내용
+    </div>
+  </div>
+</div>
+
+<script>
+  // JavaScript를 사용하여 드롭다운을 토글합니다.
+  document.querySelector('.dropdown').addEventListener('click', function() {
+    var dropdownContent = document.getElementById('myDropdown');
+    dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+  });
+</script>
+				<!-- 끝 -->
 				<a href="javascript:TextMain()"><button
 						class="rounded-button login-button p-4 text-lg"
 						style="color: black;">쪽지</button></a> <a href="./Login.jsp"><button
@@ -83,12 +102,15 @@
 				<!-- 피드 카드 -->
 				<div class="card shadow mb-4">
 					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-primary"><%
-												String index = i.getF_id();
-												Member member = new MemberDAO().login(index);
-												%>
-												<%=member.getNick()%></h6>
-						<%if(vo!=null){ %>
+						<h6 class="m-0 font-weight-bold text-primary">
+							<%
+							String index = i.getF_id();
+							Member member = new MemberDAO().login(index);
+							%>
+							<%=member.getNick()%></h6>
+						<%
+						if (vo != null) {
+						%>
 						<div>
 							<a href="javascript:TextMain()"> <i
 								class="fas fa-envelope fa-fw float-right" style="color: #fff"></i>
@@ -96,7 +118,9 @@
 								class="fas fa-user fa-fw float-right" style="color: #fff"></i>
 							</a>
 						</div>
-						<%} %>
+						<%
+						}
+						%>
 						</h6>
 					</div>
 					<div class="card-body">
@@ -114,8 +138,8 @@
 										<tr>
 											<td>
 												<div>
-													<img alt="" src="img/<%=i.getF_file()%>"
-														object-fit: cover width="100%" height="300" class="feed-image" >
+													<img alt="" src="img/<%=i.getF_file()%>" object-fit: cover
+														width="100%" height="300" class="feed-image">
 												</div>
 												<div style="font-size: 1.5em; margin-left: 10px;">
 													<i class="fa-regular fa-thumbs-up"></i>
@@ -133,17 +157,20 @@
 													<%
 													}
 													%>
-												</div>
-											<%if(vo!=null){ %>
+												</div> <%
+ if (vo != null) {
+ %>
 												<div class="comment-form">
 													<form action="CommentService">
-														<input type="hidden" name="F_INDEX"value="<%=i.getF_index()%>"> 
-														<input type="hidden" name="C_NAME" value="<%=vo.getNick()%>">
-														<input type="text" name="C_COMMENT"placeholder="댓글을 입력하세요">
+														<input type="hidden" name="F_INDEX"
+															value="<%=i.getF_index()%>"> <input type="hidden"
+															name="C_NAME" value="<%=vo.getNick()%>"> <input
+															type="text" name="C_COMMENT" placeholder="댓글을 입력하세요">
 														<input type="submit" value="전송" class="send">
 													</form>
-												</div>
-												<%} %>
+												</div> <%
+ }
+ %>
 											</td>
 										</tr>
 									</tbody>
@@ -162,7 +189,8 @@
 			<!-- Right Column -->
 			<div class="w-80 pl-4">
 				<!-- QR Code Widget -->
-				<div class="bg-white p-4 rounded-lg shadow mb-6 flex justify-center items-center">
+				<div
+					class="bg-white p-4 rounded-lg shadow mb-6 flex justify-center items-center">
 					<div class="bg-gray-300 h-24 w-24"></div>
 				</div>
 

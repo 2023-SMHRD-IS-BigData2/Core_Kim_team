@@ -110,3 +110,41 @@ body {
 .rounded-button.login-button {
 	margin-right: 5px; /* 버튼 간격을 위해 오른쪽 여백 추가 */
 }
+
+
+
+.hidden-div {
+      display: none;
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      margin-top: 10px; /* 필요에 따라 조절 가능 */
+      position: absolute;
+    }
+
+    .rounded-button {
+      /* 버튼 스타일을 원하는 대로 지정 */
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    /* 드롭다운을 위한 스타일 */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
