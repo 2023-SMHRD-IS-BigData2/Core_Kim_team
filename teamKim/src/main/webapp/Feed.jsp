@@ -57,30 +57,11 @@
 
 			</div>
 			<div class="flex space-x-2">
-				<!-- 시작 -->
-				<div class="dropdown">
-  <button class="rounded-button login-button p-4 text-lg" style="color: black;">친구</button>
-  <div id="myDropdown" class="dropdown-content">
-    <div class="hidden-div">
-      <!-- 드롭다운 내용을 원하는 대로 추가 -->
-      나타날 내용
-    </div>
-  </div>
-</div>
 
-<script>
-  // JavaScript를 사용하여 드롭다운을 토글합니다.
-  document.querySelector('.dropdown').addEventListener('click', function() {
-    var dropdownContent = document.getElementById('myDropdown');
-    dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
-  });
-</script>
-				<!-- 끝 -->
-				<a href="javascript:TextMain()"><button
-						class="rounded-button login-button p-4 text-lg"
-						style="color: black;">쪽지</button></a> <a href="./Login.jsp"><button
-						class="rounded-button login-button p-4 text-lg"
-						style="color: black;">로그인</button></a>
+				<a href="javascript:TextMain()"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-solid fa-user-plus"></i></button></a>
+				 <a href="javascript:TextMain()"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-regular fa-message"></i></button></a> 
+				<a href="./Login.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-solid fa-right-to-bracket"></i></button></a>
+
 			</div>
 		</div>
 		<hr class="mb-6 border-b">

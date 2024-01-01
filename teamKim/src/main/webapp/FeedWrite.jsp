@@ -45,11 +45,9 @@
 
 			</div>
 			<div class="flex space-x-2">
-				<button class="rounded-button login-button p-4 text-lg"
-					style="color: black;">쪽지</button>
-				<a href="./login.html"><button
-						class="rounded-button login-button p-4 text-lg"
-						style="color: black;">로그인</button></a>
+				<a href="javascript:TextMain()"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-solid fa-user-plus"></i></button></a>
+				 <a href="javascript:TextMain()"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-regular fa-message"></i></button></a> 
+				<a href="./Login.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-solid fa-right-to-bracket"></i></button></a>
 			</div>
 		</div>
 		<hr class="mb-6 border-b">
@@ -91,11 +89,12 @@
 													<i class="fa-solid fa-font"></i> <i
 														class="fa-solid fa-bold"></i> <i class="fa-solid fa-video"></i>
 													<i class="fa-regular fa-face-smile"></i>
-													<input type="file" id="input-file"
+													<i class="fa-regular fa-image"></i></label>
+													 <i class="fa-regular fa-calendar"></i>
+													 <input type="file" id="input-file"
 														className="btnOfinput" name="f_file"
 														onchange="updateFileName()"/>
-														<label for="input-file"><i class="fa-regular fa-image"></i></label>
-													 <i class="fa-regular fa-calendar"></i>
+														<label for="input-file">
 												</button>
 											</div>
 											<textarea name="f_content" style="resize: none;" class="editor-content border p-2 mb-4"
