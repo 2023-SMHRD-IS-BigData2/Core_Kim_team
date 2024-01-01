@@ -1,48 +1,59 @@
+<%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>feed</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="css/Feed.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
 </head>
-<body>
-	<div class="container-fluid">
-					<div class="row">
-						<div class="row">
-							<!-- Area Chart -->
-							<div class="col-xl-8 col-lg-7">
-								<div class="card shadow mb-4">
-									<!-- Card Header - Dropdown -->
-								</div>
-							</div>
-						</div>
 
-						<!-- Pie Chart -->
-						<div class="col-xl-4 col-lg-5"></div>
-						<!-- Content Row -->
-						<div class="row">
+<body class="bg-gray-100">
+	<script type="text/javascript">
+		function TextMain() {
+			window.open("TextMain.jsp", "TextMain",
+					"width=550, height=700, top=10, left=10")
+		}
+	</script>
+	<%
+	Member vo = (Member) session.getAttribute("vo");
+	%>
+	<div class="container mx-auto p-4">
+		<!-- Header -->
+		<div class="header mb-6">
+			<a href="./Feed.jsp"><img src="img\futsal062.png" alt="Logo"
+				class="h-15 w-40"></a>
 
-							<!-- Content Column -->
-							<div class="col-lg-6 mb-4">
+			<div class="flex-space-x-4">
+				<a href="./Feed.jsp"><button
+						class="rounded-button login-button p-4 text-lg"
+						style="color: black;">FEED</button></a> <a href="./MyPage.jsp"><button
+						class="rounded-button login-button p-4 text-lg"
+						style="color: black;">MY PAGE</button></a> <a href="./FeedWrite.jsp"><button
+						class="rounded-button login-button p-4 text-lg"
+						style="color: black;">피드작성</button></a> <a href="./MatchCalendar.jsp"><button
+						class="rounded-button login-button p-4 text-lg"
+						style="color: black;">매치용병 등록</button></a> <a
+					href="./ViewCalendar.jsp"><button
+						class="rounded-button login-button p-4 text-lg"
+						style="color: black;">매치용병 보기</button></a>
 
-								<!-- Color System -->
-								<div class="row"></div>
-							</div>
-						</div>
-						<!-- Pie Chart -->
-						<div class="col-xl-4 col-lg-5"></div>
 
-						<!-- Content Row -->
-						<div class="row">
-
-							<!-- Content Column -->
-							<div class="col-lg-6 mb-4">
-
-								<!-- Color System -->
-								<div class="row"></div>
-							</div>
-						</div>
+			</div>
+			<div class="flex space-x-2">
+				<a href="javascript:TextMain()"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-solid fa-user-plus"></i></button></a>
+				 <a href="javascript:TextMain()"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-regular fa-message"></i></button></a> 
+				<a href="./Login.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-solid fa-right-to-bracket"></i></button></a>
+			</div>
+		</div>
 						<!-- 여기서부터 -->
 
 						<div class="col-lg-6 mb-4">
@@ -51,7 +62,7 @@
 							<!-- Illustrations -->
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary" align="center">매치등록</h6>
+									<h6 class="m-0 font-weight-bold text-primary" align="center">매치 등록하기</h6>
 								</div>
 								<div class="card-body">
 									<div class="text-center">
@@ -165,7 +176,7 @@
 												<option value="상">상</option>
 											</select><br> <label for="position"> 남기실 말</label> <input
 												type="text" id="matching_comment" name="comment" required>
-											<br> <input type="submit" value="매치 게시글 등록하기"
+											<br> <input class="apply-button bg-green-600 text-white py-2 px-4 rounded-full" type="submit" value="매치 게시글 등록하기"
 												onclick="matchingRegistration()">
 										</form>
 									</div>
@@ -176,8 +187,7 @@
 							<!-- Illustrations -->
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary" align="center">용병
-										등록</h6>
+									<h6 class="m-0 font-weight-bold text-primary" align="center">용병 등록하기</h6>
 								</div>
 
 								<div class="card-body">
@@ -262,7 +272,7 @@
 												<option value="상">상</option>
 											</select><br> <label for="position"> 남기실 말</label> <input
 												type="text" id="M_comment" name="comment" required><br>
-											<input type="submit" value="용병 게시글 등록하기">
+											<input class="apply-button bg-green-600 text-white py-2 px-4 rounded-full" type="submit" value="용병 게시글 등록하기">
 
 										</form>
 									</div>

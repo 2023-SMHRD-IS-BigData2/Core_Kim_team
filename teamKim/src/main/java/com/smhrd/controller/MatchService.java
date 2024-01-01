@@ -46,7 +46,7 @@ public class MatchService extends HttpServlet {
     	  int ck = new MatchDAO().makeYb(match);
       }
       
-      response.sendRedirect("ViewMatch.jsp?date="+matchDay);
+      response.sendRedirect("ViewMatching.jsp?date="+matchDay);
    
    
    }
