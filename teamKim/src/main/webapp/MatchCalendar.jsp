@@ -20,7 +20,7 @@
         <!-- Header -->
         <div class="header mb-6 flex justify-between items-center">
             <div>
-                <a href="./feed.jsp"><img src="img\futsal062.png" alt="Logo" class="h-15 w-40"></a>
+                <a href="./Feed.jsp"><img src="img\futsal062.png" alt="Logo" class="h-15 w-40"></a>
             </div>
             <div class="flex-space-x-4">
               <a href="./Feed.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;">FEED</button></a>

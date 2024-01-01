@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.MatchDAO"%>
+<%@page import="com.smhrd.model.Member"%>
 <%@page import="com.smhrd.model.Team"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="com.smhrd.model.MatchingDAO"%>
@@ -7,12 +9,59 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>feed</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="css/Feed.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
 </head>
-<body>
+
+<body class="bg-gray-100">
+	<script type="text/javascript">
+		function TextMain() {
+			window.open("TextMain.jsp", "TextMain",
+					"width=550, height=700, top=10, left=10")
+		}
+	</script>
+	<%
+	Member vo = (Member) session.getAttribute("vo");
+	%>
+	<div class="container mx-auto p-4">
+		<!-- Header -->
+		<div class="header mb-6">
+			<a href="./Feed.jsp"><img src="img\futsal062.png" alt="Logo"
+				class="h-15 w-40"></a>
+
+			<div class="flex-space-x-4">
+				<a href="./Feed.jsp"><button
+						class="rounded-button login-button p-4 text-lg"
+						style="color: black;">FEED</button></a> <a href="./MyPage.jsp"><button
+						class="rounded-button login-button p-4 text-lg"
+						style="color: black;">MY PAGE</button></a> <a href="./FeedWrite.jsp"><button
+						class="rounded-button login-button p-4 text-lg"
+						style="color: black;">피드작성</button></a> <a href="./MatchCalendar.jsp"><button
+						class="rounded-button login-button p-4 text-lg"
+						style="color: black;">매치용병 등록</button></a> <a
+					href="./ViewCalendar.jsp"><button
+						class="rounded-button login-button p-4 text-lg"
+						style="color: black;">매치용병 보기</button></a>
+
+
+			</div>
+			<div class="flex space-x-2">
+				<a href="javascript:TextMain()"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-solid fa-user-plus"></i></button></a>
+				 <a href="javascript:TextMain()"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-regular fa-message"></i></button></a> 
+				<a href="./Login.jsp"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-solid fa-right-to-bracket"></i></button></a>
+			</div>
+		</div>
+
                  <%
                   String date = request.getParameter("date");
 
@@ -82,17 +131,17 @@
                          <%
                         for (Match i : ma1) {
                           
-                          /*
                           
-                         float star = new MatchingDAO().starNum(i.getUser_index());
-                         Team team = new MatchingDAO().userTeam(i.getUser_index());
+                          
+                         float star = new MatchDAO().starNum(i.getUser_index());
+                         Team team = new MatchDAO().userTeam(i.getUser_index());
                            String f_star = null;
                            if(star>6){
                               f_star = "5점(0)";
                            }else{
                               f_star = star+"점("+team.getT_estnum()+")";
                            } 
-                          */
+                          
                         %>  
                         <tr align="center">
                            <td><%=new MemberDAO().login(i.getUser_index()).getNick()%></td>
