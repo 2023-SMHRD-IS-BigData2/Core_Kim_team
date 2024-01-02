@@ -92,7 +92,7 @@
 				<a data-bs-toggle="dropdown"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-solid fa-right-to-bracket"></i></button></a>
             		<ui class="dropdown-menu">
                 		<li><a href="./Login.jsp" class="dropdown-item">login</a></li>
-                		<li><a href="./LogoutService.jsp" class="dropdown-item">logout</a></li>
+                		<li><a href="./LogoutService" class="dropdown-item">logout</a></li>
            			</ui>
 			</div>
 		</div>
