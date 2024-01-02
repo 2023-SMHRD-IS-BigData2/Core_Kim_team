@@ -64,8 +64,30 @@
 
 			</div>
 			<div class="flex space-x-2">
+			<!-- 친구 목록 시작 -->
+			<a data-bs-toggle="dropdown"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-solid fa-user-plus"></i></button></a>
+            <ui class="dropdown-menu">
+                <li>
+                    <div class="dropdown-item">
+                        <div class="friend-request" align="center">
+                            <div class="friend-info">
 
-				<a href="javascript:TextMain()"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-solid fa-user-plus"></i></button></a>
+                                <div style="font-size: 16px">
+                                    님이 친구 요청
+                                </div>
+                            </div>
+                            <div class="friend-actions">
+                                <a href="">
+                                    <button class="btn-accept" style="width: 50px; height: 30px;">수락</button>
+                                </a> <a href="">
+                                    <button class="btn-reject" style="width: 50px; height: 30px;">거절</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ui>
+            <!-- 친구 목록 끝 -->
 				 <a href="javascript:TextMain()"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-regular fa-message"></i></button></a> 
 				<a data-bs-toggle="dropdown"><button class="rounded-button login-button p-4 text-lg" style="color: black;"><i class="fa-solid fa-right-to-bracket"></i></button></a>
             		<ui class="dropdown-menu">
